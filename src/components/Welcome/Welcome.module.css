@@ -1,7 +1,24 @@
+@import '../../styles.css';
 .title {
   color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+  font-family: 'Gotham Thin';
   font-size: rem(100px);
-  font-weight: 900;
+  letter-spacing: rem(-2px);
+
+  @media (max-width: $mantine-breakpoint-md) {
+    font-size: rem(50px);
+  }
+}
+
+.titleGrad {
+  color: linear-gradient(90deg, var(--transBlue) 0%, var(--transPink) 100%);
+}
+
+.title2 {
+  font-family: 'Gotham Light';
+  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+  font-size: rem(100px);
+  /* font-weight: 900; */
   letter-spacing: rem(-2px);
 
   @media (max-width: $mantine-breakpoint-md) {

@@ -1,0 +1,43 @@
+/* global styles */
+@font-face {
+  font-family: 'Gotham Bold';
+  src: url('./assets/fonts/Gotham-Bold.otf') format(opentype);
+}
+@font-face {
+  font-family: 'Gotham Medium';
+  src: url('./assets/fonts/Gotham-Medium.otf') format(opentype);
+}
+@font-face {
+  font-family: 'Gotham Book';
+  src: url('./assets/fonts/Gotham-Book.otf') format(opentype);
+}
+@font-face {
+  font-family: 'Gotham Thin';
+  src: url('./assets/fonts/Gotham-Thin.otf') format(opentype);
+}
+@font-face {
+  font-family: 'Gotham Light';
+  src: url('./assets/fonts/Gotham-Light.otf') format(opentype);
+}
+@font-face {
+  font-family: 'Gotham Book Italic';
+  src: url('./assets/fonts/Gotham-BookItalic.otf') format(opentype);
+}
+@font-face {
+  font-family: 'Gotham Thin Italic';
+  src: url('./assets/fonts/Gotham-ThinItalic.otf') format(opentype);
+}
+@font-face {
+  font-family: 'Gotham Light Italic';
+  src: url('./assets/fonts/Gotham-LightItalic.otf') format(opentype);
+}
+
+:root {
+  @mixin light-root {
+    --mantine-color-body: #f9f8ff;
+  }
+
+  @mixin dark-root {
+    --mantine-color-body: #111111;
+  }
+}
