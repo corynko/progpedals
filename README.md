@@ -14,8 +14,7 @@ This is the online repository for progpedals.com, creating progressive audio too
 2. [Usage](#usage)
 3. [License](#license)
 4. [Contributors](#contributors)
-5. [Tests](#tests)
-6. [Questions](#questions)
+5. [Questions](#questions)
 
 ## Installation
 
@@ -52,4 +51,4 @@ This project was built by @corynko. While I welcome feedback, this project is no
 
 Please don't hesitate to reach out to me at info@progpedals.com or open an issue on my repository (@corynko) with any questions or bugs.
 
-- readme made using @corynko's readme generator -
+|| _readme made using @corynko's readme generator_ ||
