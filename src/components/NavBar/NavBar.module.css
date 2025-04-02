@@ -1,0 +1,56 @@
+.navbarContainer {
+  position: absolute;
+  top: 0;
+  z-index: 1000;
+  padding: 2rem 2rem;
+  width: 100%;
+  backdrop-filter: blur(6px);
+  z-index: 1;
+}
+
+.navbarInner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.desktopLinks {
+  display: flex;
+  gap: 2rem;
+  color: var(--prideYellow);
+}
+
+.mobileBurger {
+  display: none;
+}
+
+.logo {
+  height: 75px;
+  width: auto;
+}
+
+.cls1 {
+  /* fill: #fff;
+  stroke: #231f20; */
+  stroke-miterlimit: 10;
+  stroke-width: 5px;
+}
+
+.navLink {
+  font-size: larger;
+  font-family: 'Gotham Book';
+  transition: color 5s ease-in-out;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .desktopLinks {
+    display: none;
+  }
+
+  .mobileBurger {
+    display: block;
+  }
+}

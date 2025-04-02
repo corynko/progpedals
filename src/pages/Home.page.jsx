@@ -6,8 +6,7 @@ export function HomePage() {
   const theme = useMantineTheme();
   return (
     <>
-      <Welcome />
-      <ColorSchemeToggle />
+      <Welcome theme={theme} />
     </>
   );
 }
