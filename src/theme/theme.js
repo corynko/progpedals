@@ -1,7 +1,12 @@
-import { createTheme } from '@mantine/core';
+import { colorsTuple, createTheme, virtualColor } from '@mantine/core';
 
 export const theme = createTheme({
   colors: {
+    primary: virtualColor({
+      name: 'primary',
+      dark: 'lightest',
+      light: 'darkest',
+    }),
     pridePurple: [
       '#f6f0fa',
       '#e9ddef',
@@ -111,23 +116,23 @@ export const theme = createTheme({
       '#92173c',
     ],
     lightest: [
-      '#f0f2fa',
-      '#dee1ed',
-      '#b9c0dd',
-      '#919ece',
-      '#7080c0',
-      '#5b6eb9',
-      '#5064b6',
-      '#4154a0',
-      '#394a90',
-      '#2e4080',
+      '#ffffff',
+      '#f5f5f5',
+      '#ebebeb',
+      '#e0e0e0',
+      '#d6d6d6',
+      '#cccccc',
+      '#adadad',
+      '#717171',
+      '#666666',
+      '#000000',
     ],
     darkest: [
-      '#999999',
+      '#fafefb',
+      '#f4f4f4',
+      '#9f9f9f',
       '#888888',
-      '#777777',
       '#666666',
-      '#555555',
       '#444444',
       '#333333',
       '#222222',
@@ -137,8 +142,22 @@ export const theme = createTheme({
   },
   // primaryColor: 'transBlue',
   // primaryShade: '6',
+
+  //
+  // components: {
+  //   Title: {
+  //     styles: (theme) => ({
+  //       root: {
+  //         color:
+  //           theme.colorScheme === 'dark'
+  //             ? theme.colors.darkest[9] // Use shade index 6 for dark mode
+  //             : theme.colors.lightest[1], // Use shade index 6 for light mode
+  //       },
+  //     }),
+  //   },
+  // },
   autoContrast: true,
-  luminanceThreshold: 0.29,
+  luminanceThreshold: 0.2,
   fontFamily: 'Gotham Thin, Gotham Book, Gotham Light, Gotham Medium',
   defaultGradient: {
     from: 'transPink',

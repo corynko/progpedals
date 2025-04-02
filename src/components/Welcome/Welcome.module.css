@@ -1,13 +1,19 @@
 @import '../../styles.css';
 .title {
-  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+  color: light-dark(var(--darkest), var(--lightest));
   font-family: 'Gotham Thin';
   font-size: rem(100px);
   letter-spacing: rem(-2px);
 
-  @media (max-width: $mantine-breakpoint-md) {
+  @media (max-width: mantine-breakpoint-md) {
     font-size: rem(50px);
   }
+}
+
+.progPedals {
+  position: absolute;
+  top: 9rem;
+  left: 3rem;
 }
 
 .titleGrad {
@@ -21,7 +27,82 @@
   /* font-weight: 900; */
   letter-spacing: rem(-2px);
 
-  @media (max-width: $mantine-breakpoint-md) {
+  @media (max-width: mantine-breakpoint-md) {
     font-size: rem(50px);
   }
+}
+
+.progPedals,
+.slogan {
+  z-index: 1;
+}
+
+.slogan {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+}
+
+.homeHeader {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.bgImage {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: -10;
+}
+
+.darkBg {
+  background-image: url(../../assets/png/EKP_CIR-60Dark.jpg);
+}
+
+.lightBg {
+  background-image: url(../../assets/png/EKP_CIR-69Light.jpg);
+}
+
+.navButtons {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 2rem;
+  z-index: 1;
+}
+
+.navButton {
+  font-family: 'Gotham Book';
+  font-size: 1.2rem;
+  padding: 0.75rem 1.5rem;
+  background: #00000033;
+  border: 3px outset var(--mantine-color-transBlue-7);
+  color: var(--mantine-color-transBlue-7);
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  border-radius: 14px;
+}
+
+.navButton:hover {
+  border-color: var(--mantine-color-transPink-8);
+  color: var(--mantine-color-transPink-8);
+  transform: scale(125%);
+  background: #00000066;
+  transition: all 0.5s ease-in-out;
+}
+
+.dark .navButton {
+  border-color: var(--mantine-color-transPink-3);
+  color: var(--mantine-color-transPink-3);
+  transition: all 0.5s ease-in-out;
+}
+
+.dark .navButton:hover {
+  border-color: var(--mantine-color-transBlue-4);
+  color: var(--mantine-color-transBlue-4);
+  transition: all 0.5s ease-in-out;
 }
