@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import cx from 'clsx'; // for conditional classNames
 import { AnimatePresence, motion } from 'motion/react';
+import { Link } from 'react-router-dom';
 import { Text, Title, useMantineColorScheme } from '@mantine/core';
 import { usePrimaryColor } from '../../theme/usePrimaryColor';
 import { Navbar } from '../NavBar/navBar';
@@ -62,14 +63,20 @@ export function Welcome() {
           className={cx(classes.navButtons, { [classes.dark]: isDark })}
         >
           {['about', 'products', 'contact'].map((label) => (
-            <button
+            <Link
               key={label}
-              className={cx(classes.navButton, 'hvr-shutter-in-horizontal', {
+              to={`/${label}`}
+              style={{ textDecoration: 'none' }}
+              onMouseDown={(e) => {
+                e.preventDefault();
+                e.currentTarget.blur();
+              }}
+              className={cx(classes.navButton, 'hvr-glow', classes.hvr_underline_from_center, {
                 [classes.dark]: isDark,
               })}
             >
               {label}
-            </button>
+            </Link>
           ))}
         </motion.div>
         <div className={classes.slogan}>
