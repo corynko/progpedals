@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   Anchor,
   Burger,
@@ -28,6 +29,7 @@ export function Navbar() {
       <div className={classes.navbarInner}>
         <Title order={2}>
           {/* <Image className={classes.logo} src={logo} /> */}
+
           <Anchor className={classes.navLink} c={navColor} href={`/`} size="md">
             <LogoDraw />
           </Anchor>
@@ -35,17 +37,29 @@ export function Navbar() {
 
         {/* Desktop Links */}
         <div className={classes.desktopLinks}>
-          {links.map((link) => (
-            <Anchor
-              className={classes.navLink}
-              c={navColor}
-              key={link}
-              href={`#${link.toLowerCase()}`}
-              size="md"
-            >
-              {link}
-            </Anchor>
-          ))}
+          {links.map((link) => {
+            const [isHovered, setIsHovered] = useState(false);
+
+            const linkColor = isHovered
+              ? isDark
+                ? theme.colors.transBlue[4]
+                : theme.colors.transPink[2]
+              : navColor;
+
+            return (
+              <Anchor
+                key={link}
+                href={`/${link.toLowerCase()}`}
+                size="md"
+                className={classes.navLink}
+                style={{ color: linkColor, transition: 'all 0.3s ease-in-out' }}
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+              >
+                {link}
+              </Anchor>
+            );
+          })}
           <ColorSchemeToggle
             navColor={navColor}
             isDark={isDark}

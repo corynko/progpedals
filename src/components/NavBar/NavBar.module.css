@@ -41,7 +41,12 @@
 .navLink {
   font-size: larger;
   font-family: 'Gotham Book';
-  transition: color 5s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.navLink:hover {
+  font-size: 135%;
+  font-family: 'Gotham Book';
+  transition: all 0.3s ease-in-out;
 }
 
 /* Mobile Styles */
