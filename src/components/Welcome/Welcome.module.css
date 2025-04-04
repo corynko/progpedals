@@ -47,28 +47,6 @@
   right: 2rem;
 }
 
-.homeHeader {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.bgImage {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  z-index: -10;
-}
-
-.darkBg {
-  background-image: url(../../assets/png/EKP_CIR-60Dark.jpg);
-}
-
-.lightBg {
-  background-image: url(../../assets/png/EKP_CIR-69Light.jpg);
-}
-
 .navButtons {
   position: absolute;
   top: 50%;

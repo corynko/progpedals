@@ -1,6 +1,8 @@
-import cx from 'clsx'; // for conditional classNames
-import { AnimatePresence, motion } from 'motion/react';
-import { Text, Title, useMantineColorScheme } from '@mantine/core';
+import { useEffect } from 'react';
+import { useMantineColorScheme } from '@mantine/core';
+import lightBg from '../../assets/png/EKP_CIR-67.jpg';
+import darkBg from '../../assets/png/EKP_SGV-32.jpg';
+import { useBackground } from '../../contexts/backgroundContext';
 import { usePrimaryColor } from '../../theme/usePrimaryColor';
 import { Navbar } from '../NavBar/navBar';
 import classes from './About.module.css';
@@ -12,32 +14,19 @@ export function About() {
   const isDark = colorScheme === 'dark';
   const navColor = usePrimaryColor(9, 3);
 
+  const { setBackgrounds } = useBackground();
+
+  useEffect(() => {
+    setBackgrounds({
+      light: lightBg,
+      dark: darkBg,
+    });
+  }, [setBackgrounds]);
+
   return (
     <>
       <Navbar />
-      <div className={classes.homeHeader}>
-        <AnimatePresence mode="sync" initial={false}>
-          {isDark ? (
-            <motion.div
-              key="dark"
-              className={cx(classes.bgImage, classes.darkBg)}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.6, ease: 'easeInOut' }}
-            />
-          ) : (
-            <motion.div
-              key="light"
-              className={cx(classes.bgImage, classes.lightBg)}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.6, ease: 'easeInOut' }}
-            />
-          )}
-        </AnimatePresence>
-      </div>
+      <div className={classes.content}></div>
     </>
   );
 }
