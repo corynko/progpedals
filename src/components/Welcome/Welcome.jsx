@@ -3,18 +3,25 @@ import cx from 'clsx'; // for conditional classNames
 import { AnimatePresence, motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { Text, Title, useMantineColorScheme } from '@mantine/core';
+import { useBackground } from '../../contexts/backgroundContext';
 import { usePrimaryColor } from '../../theme/usePrimaryColor';
 import { Navbar } from '../NavBar/navBar';
 import classes from './Welcome.module.css';
 
 import '../../hover.css';
 
+import darkBg from '../../assets/png/EKP_CIR-60Dark.jpg';
+import lightBg from '../../assets/png/EKP_CIR-69Light.jpg';
+
 export function Welcome() {
-  const [mounted, setMounted] = useState(false);
+  const { setBackgrounds } = useBackground();
 
   useEffect(() => {
-    setMounted(true);
-  }, []);
+    setBackgrounds({
+      light: lightBg,
+      dark: darkBg,
+    });
+  }, [setBackgrounds]);
 
   const { colorScheme } = useMantineColorScheme();
   const isDark = colorScheme === 'dark';
@@ -23,28 +30,7 @@ export function Welcome() {
   return (
     <>
       <Navbar />
-      <div className={classes.homeHeader}>
-        <AnimatePresence mode="sync" initial={false}>
-          {isDark ? (
-            <motion.div
-              key="dark"
-              className={cx(classes.bgImage, classes.darkBg)}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.6, ease: 'easeInOut' }}
-            />
-          ) : (
-            <motion.div
-              key="light"
-              className={cx(classes.bgImage, classes.lightBg)}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.6, ease: 'easeInOut' }}
-            />
-          )}
-        </AnimatePresence>
+      <div className={classes.content}>
         <div className={classes.progPedals}>
           <Title className={classes.title}>
             <Text className={classes.title} variant="gradient" component="span">
