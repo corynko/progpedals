@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react';
 import cx from 'clsx'; // for conditional classNames
-import { AnimatePresence, motion } from 'motion/react';
+import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { Text, Title, useMantineColorScheme } from '@mantine/core';
 import { useBackground } from '../../contexts/backgroundContext';
 import { usePrimaryColor } from '../../theme/usePrimaryColor';
-import { Navbar } from '../NavBar/navBar';
 import classes from './Welcome.module.css';
 
 import '../../hover.css';
@@ -29,7 +28,6 @@ export function Welcome() {
 
   return (
     <>
-      <Navbar />
       <div className={classes.content}>
         <div className={classes.progPedals}>
           <Title className={classes.title}>
