@@ -2,7 +2,7 @@
   "name": "mantine-vite-template",
   "private": true,
   "type": "module",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -66,5 +66,5 @@
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^3.0.9"
   },
-  "packageManager": "yarn@4.7.0"
+  "packageManager": "npm@9.6.7"
 }
