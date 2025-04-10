@@ -1,3 +1,5 @@
+@import '../../styles.css';
+
 .formContainer {
   width: 100%;
   display: flex;
@@ -29,6 +31,8 @@
   background-color: light-dark(#fff, #111);
   color: light-dark(#222, #fff);
   transition: border 0.3s ease;
+  margin-bottom: 20px;
+  margin-top: 10px;
 }
 
 .input:focus {

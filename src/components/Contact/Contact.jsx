@@ -11,9 +11,7 @@ import classes from './Contact.module.css';
 export function Contact() {
   const { colorScheme } = useMantineColorScheme();
   const isDark = colorScheme === 'dark';
-  const isInvert = colorScheme !== 'dark';
   const navColor = usePrimaryColor(9, 3);
-  const invertColor = usePrimaryColor(1, 9);
 
   const { setBackgrounds } = useBackground();
 

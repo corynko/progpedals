@@ -169,22 +169,6 @@ export const theme = createTheme({
       '#000000',
     ],
   },
-  // primaryColor: 'transBlue',
-  // primaryShade: '6',
-
-  //
-  // components: {
-  //   Title: {
-  //     styles: (theme) => ({
-  //       root: {
-  //         color:
-  //           theme.colorScheme === 'dark'
-  //             ? theme.colors.darkest[9] // Use shade index 6 for dark mode
-  //             : theme.colors.lightest[1], // Use shade index 6 for light mode
-  //       },
-  //     }),
-  //   },
-  // },
   autoContrast: true,
   luminanceThreshold: 0.2,
   fontFamily: 'Gotham Thin, Gotham Book, Gotham Light, Gotham Medium',
