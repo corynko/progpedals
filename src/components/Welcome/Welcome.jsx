@@ -3,14 +3,11 @@ import cx from 'clsx'; // for conditional classNames
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { Text, Title, useMantineColorScheme } from '@mantine/core';
+import darkBg from '../../assets/png/EKP_CIR-60Dark.jpg';
+import lightBg from '../../assets/png/EKP_CIR-69Light.jpg';
 import { useBackground } from '../../contexts/backgroundContext';
 import { usePrimaryColor } from '../../theme/usePrimaryColor';
 import classes from './Welcome.module.css';
-
-import '../../hover.css';
-
-import darkBg from '../../assets/png/EKP_CIR-60Dark.jpg';
-import lightBg from '../../assets/png/EKP_CIR-69Light.jpg';
 
 export function Welcome() {
   const { setBackgrounds } = useBackground();

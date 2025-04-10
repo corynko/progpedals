@@ -31,6 +31,10 @@
   font-family: 'Gotham Light Italic';
   src: url('./assets/fonts/Gotham-LightItalic.otf') format(opentype);
 }
+@font-face {
+  font-family: 'Gotham Medium Italic';
+  src: url('./assets/fonts/Gotham-MediumItalic.otf') format(opentype);
+}
 
 :root {
   @mixin light-root {
