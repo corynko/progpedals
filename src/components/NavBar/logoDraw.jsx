@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { useMantineColorScheme } from '@mantine/core';
-import classes from './Navbar.module.css';
+import classes from './NavBar.module.css';
 
 const pathData = [
   {
