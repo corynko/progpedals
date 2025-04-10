@@ -13,7 +13,7 @@ import { useDisclosure } from '@mantine/hooks';
 import { usePrimaryColor } from '../../theme/usePrimaryColor';
 import { ColorSchemeToggle } from '../ColorSchemeToggle/ColorSchemeToggle';
 import LogoDraw from './logoDraw';
-import classes from './Navbar.module.css';
+import classes from './NavBar.module.css';
 
 export function Navbar() {
   const theme = useMantineTheme();
