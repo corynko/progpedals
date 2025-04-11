@@ -31,6 +31,7 @@ export function Products() {
       y: 0,
       transition: {
         duration: 0.8,
+        delay: 0.5,
         ease: 'easeInOut',
       },
     },
@@ -41,6 +42,8 @@ export function Products() {
       <Container className={classes.paperContainer}>
         <motion.div
           variants={paperVariants}
+          initial="start"
+          animate="finish"
           style={{
             backdropFilter: 'blur(0px)',
           }}
@@ -49,6 +52,7 @@ export function Products() {
             backgroundColor: isDark ? '#00000044' : '#ffffff22',
             transition: {
               duration: 0.8,
+              delay: 0.5,
               ease: 'easeInOut',
             },
           }}

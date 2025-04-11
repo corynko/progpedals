@@ -1,7 +1,7 @@
 @import '../../styles.css';
 
 .content {
-  min-height: 100vh;
+  min-height: 60vh;
   display: flex;
   flex-direction: column;
   padding: 2rem;
@@ -38,10 +38,10 @@
   flex-wrap: wrap;
   flex-direction: column;
   flex-grow: 1;
-  min-height: 80vh;
-  justify-content: space-between;
-  /* align-items: flex-start; */
-  gap: 2rem;
+  max-height: 80vh;
+  justify-content: center;
+  text-align: center;
+  /* gap: 2rem; */
   padding: 1rem;
 }
 
