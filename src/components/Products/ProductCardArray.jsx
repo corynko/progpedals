@@ -2,8 +2,9 @@ import harveyImgDark from '../../assets/pedals/harvey/harveyBlack@3x.png';
 import harveyImgLight from '../../assets/pedals/harvey/harveyWhite@3x.png';
 import Harvey from '../ProductCards/harvey';
 
-[
+export const ProductCardArray = [
   {
+    slug: 'harvey',
     title: 'harvey: full-fat fuzz',
     component: <Harvey />,
     description:
