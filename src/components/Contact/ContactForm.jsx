@@ -74,7 +74,7 @@ export default function ContactForm() {
             error={errors.name?.message}
             className={classes.input}
             styles={{
-              label: { color: contrastColor, fontFamily: 'Gotham Light' },
+              label: { marginBottom: '10px', color: contrastColor, fontFamily: 'Gotham Light' },
               input: {
                 color: navColor,
                 backgroundColor: 'transparent',
@@ -101,7 +101,7 @@ export default function ContactForm() {
             error={errors.email?.message}
             className={classes.input}
             styles={{
-              label: { color: contrastColor, fontFamily: 'Gotham Light' },
+              label: { marginBottom: '10px', color: contrastColor, fontFamily: 'Gotham Light' },
               input: {
                 color: navColor,
                 backgroundColor: 'transparent',
@@ -122,7 +122,7 @@ export default function ContactForm() {
             error={errors.message?.message}
             className={classes.input}
             styles={{
-              label: { color: contrastColor, fontFamily: 'Gotham Light' },
+              label: { marginBottom: '10px', color: contrastColor, fontFamily: 'Gotham Light' },
               input: {
                 color: navColor,
                 backgroundColor: 'transparent',
