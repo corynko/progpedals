@@ -7,8 +7,7 @@ export const ProductCardArray = [
     slug: 'harvey',
     title: 'harvey: full-fat fuzz',
     component: <Harvey />,
-    description:
-      'a high gain fuzz based off of a hot rodded suhr rufus, just in time for Pride Month',
+    description: `a high gain fuzz based off of a hot rodded suhr rufus \njust in time for Pride Month`,
     price: 'pay what you want, minimum $85',
     imageLight: harveyImgLight,
     imageDark: harveyImgDark,

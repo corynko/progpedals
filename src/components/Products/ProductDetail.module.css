@@ -1,0 +1,41 @@
+@import '../../styles.css';
+
+.content {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  gap: 2rem;
+  margin-top: 150px;
+  width: 100vw;
+}
+
+.detailContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  gap: 2rem;
+  padding: 1rem;
+  overflow-x: hidden;
+}
+
+.detailImg {
+  max-height: 400px;
+  width: auto;
+}
+
+.detailH1 {
+  font-family: 'Gotham Medium';
+  font-size: x-large;
+}
+
+.detailH3 {
+  font-family: 'Gotham Book';
+  font-size: x-large;
+}
+
+.detailBody {
+  font-size: large;
+  font-family: 'Gotham Light';
+}
