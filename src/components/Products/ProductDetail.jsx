@@ -41,7 +41,7 @@ export function ProductDetail() {
           </Title>
         </div>
         <div>
-          <Paper>
+          <Paper className={classes.detailPaper}>
             <Text c={navColor} className={classes.detailH1}>
               {product.description}
             </Text>
@@ -49,7 +49,20 @@ export function ProductDetail() {
               {product.price}
             </Text>
             <Text c={navColor} className={classes.detailBody}>
-              {product.price}
+              The Rufus was already an incredibly versatile fuzz, capable of classic Hendrix Fuzz
+              Face tones to soaring Gilmour leads. We decided to bring it up to par with some of the
+              more modern demands of fuzz pedals, hot rodding the gain range to allow access to
+              crushing doom riffage and the overly square tones of certain indie-rock darlings.
+              Thus, <span style={{ fontFamily: 'Gotham Medium' }}>Harvey</span> was born, pushing
+              forward a great fuzz circuit into the future in the true spirit of progressivism. We
+              ditched the switchable octave-up in favor of more gain and more clarity, with a very
+              musical two band EQ and switchable low-mid fatness and treble boosts. Just in time for
+              Pride Month, Harvey is available for Pay What You Want, minimum $85 -{' '}
+              <span style={{ fontFamily: 'Gotham Medium' }}>
+                every dollar above the minimum will be donated to the{' '}
+                <a href="https://www.thetrevorproject.org/">Trevor Project</a>, dedicated to helping
+                LGBTQ2A+ youth find alternatives to suicide.
+              </span>
             </Text>
           </Paper>
         </div>
