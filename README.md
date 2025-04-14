@@ -25,7 +25,7 @@ This is the online repository for progpedals.com, creating progressive audio too
 
 ## Usage
 
-This website is open source, but still in active development. feel free to use it to learn more about interesting uses for react and mantine
+This website is open source, but still in active development. feel free to use it to learn more about interesting uses for react and mantine. Please note, however, that all photos and other assets included within this repo are the sole and exclusive intellectual property of Ethan Kotel and Ethan Kotel Photography, and may not be re-used without express written permission. Feel free to ask though!
 
 ## License
 
