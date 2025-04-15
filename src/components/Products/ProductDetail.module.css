@@ -24,6 +24,12 @@
   margin-top: 20px;
   font-family: 'Gotham Black';
 }
+.detailTitle2 {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-family: 'Gotham Medium';
+  font-size: x-large;
+}
 
 .detailImg {
   max-height: 400px;
@@ -33,11 +39,12 @@
 .detailH1 {
   font-family: 'Gotham Medium';
   font-size: x-large;
+  margin-bottom: 15px;
 }
 
 .detailH3 {
-  font-family: 'Gotham Book';
-  font-size: x-large;
+  font-family: 'Gotham medium';
+  font-size: larger;
 }
 
 .detailBody {
@@ -51,4 +58,34 @@
   background-color: light-dark(#ffffff44, #00000055);
   backdrop-filter: blur(6px);
   padding: 20px;
+}
+
+.detailList {
+  font-family: 'Gotham light';
+  font-size: large;
+  text-align: left;
+}
+
+.detailIcon {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.itemWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 10px;
+}
+
+.itemIcon {
+  display: flex;
+  align-items: center;
+}
+
+.itemLabel {
+  display: flex;
+  align-items: center;
 }
