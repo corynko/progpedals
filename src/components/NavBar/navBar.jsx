@@ -15,8 +15,6 @@ import { ColorSchemeToggle } from '../ColorSchemeToggle/ColorSchemeToggle';
 import LogoDraw from './logoDraw';
 import classes from './NavBar.module.css';
 
-//test
-
 export function Navbar() {
   const theme = useMantineTheme();
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();

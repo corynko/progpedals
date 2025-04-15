@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { motion } from 'motion/react';
 import { useForm } from 'react-hook-form';
@@ -12,6 +12,7 @@ export default function ContactForm() {
   const formRef = useRef();
   const navColor = usePrimaryColor(9, 1);
   const contrastColor = useContrastColor(9, 1);
+  const [turnstilePassed, setTurnstilePassed] = useState(false);
 
   const {
     register,
@@ -20,7 +21,31 @@ export default function ContactForm() {
     reset,
   } = useForm();
 
+  useEffect(() => {
+    window.onTurnstileSuccess = (token) => {
+      setTurnstilePassed(true);
+      // optionally: store token if sending to backend
+    };
+
+    window.onTurnstileExpired = () => {
+      setTurnstilePassed(false);
+    };
+
+    window.onTurnstileError = () => {
+      setTurnstilePassed(false);
+      console.error('Turnstile encountered an error.');
+    };
+  }, []);
+
   const sendEmail = async () => {
+    if (!turnstilePassed) {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Hold up',
+        text: 'Please verify you are human before submitting.',
+      });
+      return;
+    }
     try {
       Swal.fire({
         title: 'Sending...',
@@ -55,6 +80,8 @@ export default function ContactForm() {
         title: 'Oops...',
         text: 'Something went wrong. Please try again later.',
       });
+      window.turnstile?.reset(); // Resets the challenge
+      setTurnstilePassed(false);
     }
   };
 
@@ -137,6 +164,14 @@ export default function ContactForm() {
           />
 
           <Group justify="flex-end" mt="md">
+            <div
+              className="cf-turnstile"
+              data-sitekey={import.meta.env.VITE_TURNSTILE_SITE_KEY}
+              data-callback="onTurnstileSuccess"
+              data-expired-callback="onTurnstileExpired"
+              data-error-callback="onTurnstileError"
+            ></div>
+
             <motion.button
               type="submit"
               className={classes.submitButton}

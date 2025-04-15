@@ -1,6 +1,17 @@
 import { useEffect } from 'react';
+import { ArrowRight } from 'lucide-react';
 import { useParams } from 'react-router-dom';
-import { Container, Image, Paper, Text, Title, useMantineColorScheme } from '@mantine/core';
+import {
+  Container,
+  Image,
+  List,
+  Paper,
+  Text,
+  ThemeIcon,
+  Title,
+  useMantineColorScheme,
+  useMantineTheme,
+} from '@mantine/core';
 import lightBg from '../../assets/png/EKP_LW_1.jpg';
 import darkBg from '../../assets/png/EKP_S-C-12.jpg';
 import { useBackground } from '../../contexts/backgroundContext';
@@ -15,6 +26,7 @@ export function ProductDetail() {
   const isDark = colorScheme === 'dark';
   const { setBackgrounds } = useBackground();
   const navColor = usePrimaryColor(9, 3);
+  const theme = useMantineTheme();
 
   useEffect(() => {
     setBackgrounds({
@@ -49,21 +61,69 @@ export function ProductDetail() {
               {product.price}
             </Text>
             <Text c={navColor} className={classes.detailBody}>
-              The Rufus was already an incredibly versatile fuzz, capable of classic Hendrix Fuzz
-              Face tones to soaring Gilmour leads. We decided to bring it up to par with some of the
-              more modern demands of fuzz pedals, hot rodding the gain range to allow access to
-              crushing doom riffage and the overly square tones of certain indie-rock darlings.
-              Thus, <span style={{ fontFamily: 'Gotham Medium' }}>Harvey</span> was born, pushing
-              forward a great fuzz circuit into the future in the true spirit of progressivism. We
-              ditched the switchable octave-up in favor of more gain and more clarity, with a very
-              musical two band EQ and switchable low-mid fatness and treble boosts. Just in time for
-              Pride Month, Harvey is available for Pay What You Want, minimum $85 -{' '}
-              <span style={{ fontFamily: 'Gotham Medium' }}>
-                every dollar above the minimum will be donated to the{' '}
-                <a href="https://www.thetrevorproject.org/">Trevor Project</a>, dedicated to helping
-                LGBTQ2A+ youth find alternatives to suicide.
-              </span>
+              {product.longText}
             </Text>
+            <Title c={navColor} className={classes.detailTitle2}>
+              the little things:
+            </Title>
+            <List className={classes.detailList}>
+              <List.Item
+                icon={
+                  <ThemeIcon color={theme.colors.prideRed[6]} size={24} radius="xl">
+                    <ArrowRight size={16} />
+                  </ThemeIcon>
+                }
+                classNames={{
+                  itemWrapper: classes.itemWrapper,
+                  itemIcon: classes.itemIcon,
+                  itemLabel: classes.itemLabel,
+                }}
+              >
+                {product.li1}
+              </List.Item>
+              <List.Item
+                icon={
+                  <ThemeIcon color={theme.colors.prideBlue[8]} size={24} radius="xl">
+                    <ArrowRight size={16} />
+                  </ThemeIcon>
+                }
+                classNames={{
+                  itemWrapper: classes.itemWrapper,
+                  itemIcon: classes.itemIcon,
+                  itemLabel: classes.itemLabel,
+                }}
+              >
+                {product.li2}
+              </List.Item>
+              <List.Item
+                icon={
+                  <ThemeIcon color={theme.colors.prideYellow[4]} size={24} radius="xl">
+                    <ArrowRight size={16} />
+                  </ThemeIcon>
+                }
+                classNames={{
+                  itemWrapper: classes.itemWrapper,
+                  itemIcon: classes.itemIcon,
+                  itemLabel: classes.itemLabel,
+                }}
+              >
+                {product.li3}
+              </List.Item>
+              <List.Item
+                icon={
+                  <ThemeIcon color={theme.colors.prideGreen[6]} size={24} radius="xl">
+                    <ArrowRight size={16} />
+                  </ThemeIcon>
+                }
+                classNames={{
+                  itemWrapper: classes.itemWrapper,
+                  itemIcon: classes.itemIcon,
+                  itemLabel: classes.itemLabel,
+                }}
+              >
+                {product.li4}
+              </List.Item>
+            </List>
           </Paper>
         </div>
       </Container>
