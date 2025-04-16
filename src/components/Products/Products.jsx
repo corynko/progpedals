@@ -1,7 +1,16 @@
 import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
 import { useNavigate } from 'react-router-dom';
-import { Button, Card, Container, Image, Text, Title, useMantineColorScheme } from '@mantine/core';
+import {
+  Button,
+  Card,
+  Container,
+  Image,
+  Paper,
+  Text,
+  Title,
+  useMantineColorScheme,
+} from '@mantine/core';
 import darkBg from '../../assets/png/EKP_F-E-15.jpg';
 import lightBg from '../../assets/png/EKP_L-W-37.jpg';
 import { useBackground } from '../../contexts/backgroundContext';
@@ -56,7 +65,15 @@ export function Products() {
         </Title>
       </motion.div>
       <Container className={classes.paperContainer}>
-        {ProductCardArray.map((product) => (
+        <Paper className={classes.comingSoon}>
+          <Text c={navColor} className={classes.comingSoonH1}>
+            first drop coming soon
+          </Text>
+          <Text c={navColor} className={classes.comingSoonH3}>
+            stay tuned
+          </Text>
+        </Paper>
+        {/* {ProductCardArray.map((product) => (
           <motion.div
             key={product.slug}
             variants={cardVariants}
@@ -94,7 +111,7 @@ export function Products() {
               </div>
             </Card>
           </motion.div>
-        ))}
+        ))} */}
       </Container>
     </div>
   );
