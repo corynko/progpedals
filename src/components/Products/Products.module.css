@@ -97,3 +97,21 @@
   font-size: larger;
   font-family: 'Gotham Light';
 }
+
+.comingSoon {
+  background-color: light-dark(#ffffff44, #00000055);
+  backdrop-filter: blur(6px);
+  padding: 20px;
+  text-align: center;
+}
+
+.comingSoonH1 {
+  font-family: 'Gotham Medium';
+  font-size: x-large;
+  margin-bottom: 15px;
+}
+
+.comingSoonH3 {
+  font-family: 'Gotham medium';
+  font-size: larger;
+}
