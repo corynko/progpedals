@@ -17,7 +17,8 @@
     "vitest:watch": "vitest",
     "test": "npm run typecheck && npm run prettier && npm run lint && npm run vitest && npm run build",
     "storybook": "storybook dev -p 6006",
-    "storybook:build": "storybook build"
+    "storybook:build": "storybook build",
+    "postinstall": "npm install react-helmet-async@2.0.5 --legacy-peer-deps"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
@@ -28,7 +29,6 @@
     "motion": "^12.6.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-helmet-async": "^2.0.5",
     "react-hook-form": "^7.55.0",
     "react-router-dom": "^7.4.0",
     "sweetalert2": "^11.6.13"
