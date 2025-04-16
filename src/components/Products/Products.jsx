@@ -16,6 +16,20 @@ export function Products() {
   const { setBackgrounds } = useBackground();
   const navigate = useNavigate();
 
+  const headerVariants = {
+    start: {
+      opacity: 0,
+    },
+    finish: {
+      opacity: 1,
+      transition: {
+        delay: 0.2,
+        duration: 0.75,
+        ease: 'easeInOut',
+      },
+    },
+  };
+
   useEffect(() => {
     setBackgrounds({
       light: lightBg,
@@ -34,6 +48,13 @@ export function Products() {
 
   return (
     <div className={classes.content}>
+      <motion.div variants={headerVariants} initial="start" animate="finish">
+        <Title className={classes.titleLocation}>
+          <Text className={classes.title} component="span">
+            products
+          </Text>
+        </Title>
+      </motion.div>
       <Container className={classes.paperContainer}>
         {ProductCardArray.map((product) => (
           <motion.div

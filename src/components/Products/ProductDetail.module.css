@@ -89,3 +89,33 @@
   display: flex;
   align-items: center;
 }
+
+.detailA {
+  color: light-dark(var(--mantine-color-transPink-5), var(--mantine-color-prideBlue-6));
+  /* color: light-dark(#ffffff, #222222); */
+  font-weight: 600;
+  /* padding: 0.75rem; */
+  /* border-radius: 10px; */
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.detailA:hover {
+  transform: scale(1.05);
+  /* color: light-dark(#555555, #ffffff); */
+  color: light-dark(var(--mantine-color-prideBlue-7), var(--mantine-color-transPink-5));
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transition:
+    transform 0.3s ease-out,
+    background 0.3s ease-out,
+    box-shadow 0.3s ease-out,
+    color 0.3s;
+}
+
+.detailA:active {
+  transform: scale(0.96);
+  color: light-dark(var(--mantine-color-prideBlue-9), var(--mantine-color-prideRed-7));
+  /* color: light-dark(#f1f3f4, #ffffff); */
+  transition: all 0.25s ease-out;
+}
