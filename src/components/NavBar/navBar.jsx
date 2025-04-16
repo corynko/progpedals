@@ -88,10 +88,19 @@ export function Navbar() {
       >
         <Flex direction="column" gap="md">
           {links.map((link) => (
-            <Anchor key={link} href={`#${link.toLowerCase()}`} onClick={close} size="lg">
+            <Anchor
+              key={link}
+              href={`/${link.toLowerCase()}`}
+              size="md"
+              className={classes.navLink}
+              style={{ color: navColor, transition: 'all 0.3s ease-in-out' }}
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+            >
               {link}
             </Anchor>
           ))}
+
           <ColorSchemeToggle
             navColor={navColor}
             isDark={isDark}

@@ -22,6 +22,20 @@ export default function ContactForm() {
   } = useForm();
 
   useEffect(() => {
+    const scriptId = 'cf-turnstile-script';
+
+    if (!document.getElementById(scriptId)) {
+      const script = document.createElement('script');
+      script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
+      script.async = true;
+      script.defer = true;
+      script.id = scriptId;
+
+      document.body.appendChild(script);
+    }
+  }, []);
+
+  useEffect(() => {
     window.onTurnstileSuccess = (token) => {
       setTurnstilePassed(true);
       // optionally: store token if sending to backend

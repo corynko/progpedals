@@ -1,6 +1,7 @@
 import harveyImgDark from '../../assets/pedals/harvey/harveyBlack@3x.png';
 import harveyImgLight from '../../assets/pedals/harvey/harveyWhite@3x.png';
 import Harvey from '../ProductCards/harvey';
+import classes from './ProductDetail.module.css';
 
 export const ProductCardArray = [
   {
@@ -9,8 +10,7 @@ export const ProductCardArray = [
     component: <Harvey />,
     description: (
       <>
-        - a high gain fuzz based off of a hot rodded suhr rufus - <br /> just in time for Pride
-        Month
+        - a high gain fuzz based on a hot rodded suhr rufus - <br /> just in time for Pride Month
       </>
     ),
     price: 'pay what you want, minimum $85',
@@ -29,14 +29,25 @@ export const ProductCardArray = [
         available for Pay What You Want, minimum $85 -{' '}
         <span style={{ fontFamily: 'Gotham Medium' }}>
           every dollar above the minimum will be donated to the{' '}
-          <a href="https://www.thetrevorproject.org/">Trevor Project</a>, dedicated to helping
-          LGBTQ2A+ youth find alternatives to suicide.
+          <a
+            className={classes.detailA}
+            style={{ fontFamily: 'Gotham Black' }}
+            href="https://www.thetrevorproject.org/"
+          >
+            Trevor Project
+          </a>
+          , dedicated to helping LGBTQ2A+ youth find alternatives to suicide.
         </span>
       </>
     ),
-    li1: 'point to point hand soldered, hand assembled, and hand painted',
+    li1: 'point-to-point hand soldered, hand assembled, and hand painted',
     li2: 'all pedals are tested for durability and expected functionality',
-    li3: 'built with high quality components including tested and matched transistors and metal film resistors',
-    li4: 'limited to 20, numbered pedals',
+    li3: (
+      <>
+        built with high quality components including tested and <br />
+        matched transistors and metal film resistors
+      </>
+    ),
+    li4: 'limited to 20, individually numbered pedals',
   },
 ];
