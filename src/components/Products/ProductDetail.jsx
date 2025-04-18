@@ -123,6 +123,20 @@ export function ProductDetail() {
               >
                 {product.li4}
               </List.Item>
+              <List.Item
+                icon={
+                  <ThemeIcon color={theme.colors.prideOrange[6]} size={24} radius="xl">
+                    <ArrowRight size={16} />
+                  </ThemeIcon>
+                }
+                classNames={{
+                  itemWrapper: classes.itemWrapper,
+                  itemIcon: classes.itemIcon,
+                  itemLabel: classes.itemLabel,
+                }}
+              >
+                {product.li5}
+              </List.Item>
             </List>
           </Paper>
         </div>
