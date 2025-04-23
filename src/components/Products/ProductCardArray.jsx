@@ -77,6 +77,11 @@ export const ProductCardArray = [
         </div>
       </>
     ),
+    minimumPrice: 95,
+    charity: {
+      name: 'Legal Defense Fund',
+      url: 'https://www.naacpldf.org/',
+    },
   },
   {
     slug: 'harvey',
@@ -124,5 +129,10 @@ export const ProductCardArray = [
     ),
     li4: 'limited to 20, individually numbered pedals',
     li5: 'benefits LGBTQIA2S+ youth via the Trevor Project',
+    minimumPrice: 85,
+    charity: {
+      name: 'The Trevor Project',
+      url: 'https://www.thetrevorproject.org/',
+    },
   },
 ];

@@ -1,10 +1,12 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { useParams } from 'react-router-dom';
 import {
+  Button,
   Container,
   Image,
   List,
+  NumberInput,
   Paper,
   Text,
   ThemeIcon,
@@ -15,6 +17,7 @@ import {
 import lightBg from '../../assets/png/EKP_LW_1.jpg';
 import darkBg from '../../assets/png/EKP_S-C-12.jpg';
 import { useBackground } from '../../contexts/backgroundContext';
+import { useCart } from '../../contexts/cartContext';
 import { usePrimaryColor } from '../../theme/usePrimaryColor';
 import { ProductCardArray } from './ProductCardArray';
 import classes from './ProductDetail.module.css';
@@ -27,6 +30,9 @@ export function ProductDetail() {
   const { setBackgrounds } = useBackground();
   const navColor = usePrimaryColor(9, 3);
   const theme = useMantineTheme();
+
+  const [donation, setDonation] = useState(0);
+  const { addToCart } = useCart();
 
   useEffect(() => {
     setBackgrounds({
@@ -51,6 +57,18 @@ export function ProductDetail() {
           <Title c={navColor} className={classes.detailTitle}>
             {product.title}
           </Title>
+          <Button onClick={() => addToCart(product, donation)} fullWidth mt="md">
+            Add to cart — ${product.minimumPrice + donation}
+          </Button>
+
+          <NumberInput
+            value={donation}
+            onChange={setDonation}
+            label="Additional donation (optional)"
+            min={0}
+            step={5}
+            prefix="$"
+          />
         </div>
         <div>
           <Paper className={classes.detailPaper}>
