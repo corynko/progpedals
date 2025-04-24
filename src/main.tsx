@@ -1,6 +1,6 @@
 import React from 'react';
+import { HelmetProvider } from '@dr.pogodin/react-helmet';
 import ReactDOM from 'react-dom/client';
-import { HelmetProvider } from 'react-helmet-async';
 import App from './App';
 
 ReactDOM.createRoot(document.getElementById('root')).render(

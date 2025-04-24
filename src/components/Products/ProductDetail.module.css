@@ -55,7 +55,7 @@
 }
 
 .detailPaper {
-  background-color: light-dark(#ffffff44, #00000055);
+  background-color: light-dark(#ffffff99, #00000088);
   backdrop-filter: blur(6px);
   padding: 20px;
 }
@@ -118,4 +118,42 @@
   color: light-dark(var(--mantine-color-prideBlue-9), var(--mantine-color-prideRed-7));
   /* color: light-dark(#f1f3f4, #ffffff); */
   transition: all 0.25s ease-out;
+}
+
+.detailButton {
+  background: light-dark(var(--mantine-color-transPink-5), var(--mantine-color-transBlue-6));
+  color: light-dark(#ffffff, #ffffff);
+  font-weight: 600;
+  padding: 0.75rem;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.detailButton:hover {
+  transform: scale(1.05);
+  color: light-dark(#ffffff, #ffffff);
+  background: light-dark(var(--mantine-color-transBlue-6), var(--mantine-color-transPink-5));
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transition:
+    transform 0.3s ease-out,
+    background 0.3s ease-out,
+    box-shadow 0.3s ease-out,
+    color 0.3s;
+}
+
+.detailButton:active {
+  transform: scale(0.96);
+  background: light-dark(var(--mantine-color-prideBlue-4), var(--mantine-color-prideRed-7));
+  color: light-dark(#f1f3f4, #ffffff);
+  transition: all 0.25s ease-out;
+}
+
+.detailNumber {
+  font-family: 'Gotham Book';
+}
+
+.detailInput {
+  font-family: 'Gotham Medium';
 }
