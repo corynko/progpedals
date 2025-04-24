@@ -18,6 +18,7 @@ import lightBg from '../../assets/png/EKP_LW_1.jpg';
 import darkBg from '../../assets/png/EKP_S-C-12.jpg';
 import { useBackground } from '../../contexts/backgroundContext';
 import { useCart } from '../../contexts/cartContext';
+import { useContrastColor } from '../../theme/useContrastColor';
 import { usePrimaryColor } from '../../theme/usePrimaryColor';
 import { ProductCardArray } from './ProductCardArray';
 import classes from './ProductDetail.module.css';
@@ -29,6 +30,7 @@ export function ProductDetail() {
   const isDark = colorScheme === 'dark';
   const { setBackgrounds } = useBackground();
   const navColor = usePrimaryColor(9, 3);
+  const contrastColor = useContrastColor(9, 1);
   const theme = useMantineTheme();
 
   const [donation, setDonation] = useState(0);
@@ -57,18 +59,30 @@ export function ProductDetail() {
           <Title c={navColor} className={classes.detailTitle}>
             {product.title}
           </Title>
-          <Button onClick={() => addToCart(product, donation)} fullWidth mt="md">
-            Add to cart — ${product.minimumPrice + donation}
-          </Button>
+          <Paper className={classes.detailPaper}>
+            <Button
+              className={classes.detailButton}
+              onClick={() => addToCart(product, donation)}
+              fullWidth
+              mt="md"
+            >
+              Add to cart — ${product.minimumPrice + donation}
+            </Button>
 
-          <NumberInput
-            value={donation}
-            onChange={setDonation}
-            label="Additional donation (optional)"
-            min={0}
-            step={5}
-            prefix="$"
-          />
+            <NumberInput
+              value={donation}
+              onChange={setDonation}
+              label="Additional Donation"
+              classNames={{ input: classes.detailInput }}
+              thousandSeparator=","
+              className={classes.detailNumber}
+              min={0}
+              step={10}
+              prefix="$"
+              stepHoldDelay={500}
+              stepHoldInterval={(t) => Math.max(1000 / t ** 2, 25)}
+            />
+          </Paper>
         </div>
         <div>
           <Paper className={classes.detailPaper}>

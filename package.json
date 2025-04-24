@@ -17,10 +17,10 @@
     "vitest:watch": "vitest",
     "test": "npm run typecheck && npm run prettier && npm run lint && npm run vitest && npm run build",
     "storybook": "storybook dev -p 6006",
-    "storybook:build": "storybook build",
-    "postinstall": "npm install react-helmet-async@2.0.5 --legacy-peer-deps"
+    "storybook:build": "storybook build"
   },
   "dependencies": {
+    "@dr.pogodin/react-helmet": "^3.0.1",
     "@emailjs/browser": "^4.4.1",
     "@mantine/core": "7.17.2",
     "@mantine/hooks": "7.17.2",

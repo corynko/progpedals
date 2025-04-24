@@ -1,11 +1,90 @@
 import acabImgLight from '../../assets/pedals/1312/1312_black_wordless.jpg';
 import acabImgDark from '../../assets/pedals/1312/1312_red_wordless.jpg';
+import fRWDark from '../../assets/pedals/fuckRW/fuckRW_black.jpg';
+import fRWLight from '../../assets/pedals/fuckRW/fuckRW_white.jpg';
 import harveyImgDark from '../../assets/pedals/harvey/harveyBlack@3x.png';
 import harveyImgLight from '../../assets/pedals/harvey/harveyWhite@3x.png';
 import Harvey from '../ProductCards/harvey';
 import classes from './ProductDetail.module.css';
 
 export const ProductCardArray = [
+  {
+    slug: 'fRW',
+    title: `f.RW`,
+    component: <Harvey />,
+    description: (
+      <>
+        a 'ram's head' Big Muff with several mods to get you <br /> closer to a certain someone's
+        soaring leads
+      </>
+    ),
+    price: 'pay what you want, minimum $95',
+    imageLight: fRWLight,
+    imageDark: fRWDark,
+    longText: (
+      <>
+        <span style={{ fontFamily: 'Gotham Medium' }}>f.RW</span> is a fuzz modeled on one of the
+        most famous boxes of all time, with several mods to capture one of its most famous user's
+        tonal palette. Four gain stages powered by USA-made silicon transistors join two,
+        symmetrical, germanium diode clipping stages for plenty of gain tempered with a sweet,
+        singing high end. An added 'touch' knob allows you to dial in the perfect amount of gain
+        bleed, enabling you to ride your guitar's volume knob as much, or as little, as you'd like.
+        f.RW is available for Pay What You Want, minimum $95 -{' '}
+        <span style={{ fontFamily: 'Gotham Medium' }}>
+          every dollar above the minimum will be donated to the{' '}
+          <a
+            className={classes.detailA}
+            style={{ fontFamily: 'Gotham Black' }}
+            href="https://www.naacpldf.org/"
+          >
+            Anti-Defamation League (ADL)
+          </a>
+          , dedicated to fighting antisemitism, extremism, and hate speech in all its forms.
+        </span>{' '}
+        It's a shame when one member of a band tries to destroy all of the good influence that band
+        has had - don't let him.
+      </>
+    ),
+    li1: (
+      <>
+        <div className={classes.detail1312Li}>
+          point-to-point hand soldered, hand assembled, and hand painted
+        </div>
+      </>
+    ),
+    li2: (
+      <>
+        <div className={classes.detail1312Li}>
+          all pedals are tested for durability and expected functionality
+        </div>
+      </>
+    ),
+    li3: (
+      <>
+        <div className={classes.detail1312Li}>
+          built with high quality components including tested and <br />
+          matched transistors, oversized capacitors, and metal film resistors
+        </div>
+      </>
+    ),
+    li4: (
+      <>
+        <div className={classes.detail1312Li}>limited to 10, individually numbered pedals</div>
+      </>
+    ),
+    li5: (
+      <>
+        <div className={classes.detail1312Li}>
+          benefits antisemitism, extremism, and hate crime prevention via the ADL
+        </div>
+      </>
+    ),
+    minimumPrice: 95,
+    charity: {
+      name: 'Legal Defense Fund',
+      url: 'https://www.naacpldf.org/',
+    },
+  },
   {
     slug: '1312',
     title: `1312: don't talk to the fuzz`,

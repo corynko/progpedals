@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+import { Helmet } from '@dr.pogodin/react-helmet';
 import { useMantineTheme } from '@mantine/core';
 import { About } from '../components/About/About';
 
