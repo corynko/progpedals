@@ -88,9 +88,6 @@ export function About() {
               <motion.div
                 key={index}
                 variants={paperVariants}
-                style={{
-                  backdropFilter: 'blur(0px)',
-                }}
                 whileInView={{
                   backdropFilter: 'blur(4px)',
                   backgroundColor: isDark ? '#00000044' : '#ffffff22',
