@@ -14,7 +14,7 @@ export const ProductCardArray = [
     component: <Harvey />,
     description: (
       <>
-        a 'ram's head' Big Muff with several mods to get you <br /> closer to a certain someone's
+        a ram's head Big Muff with several mods to get you <br /> closer to a certain someone's
         soaring leads
       </>
     ),
@@ -35,6 +35,7 @@ export const ProductCardArray = [
           <a
             className={classes.detailA}
             style={{ fontFamily: 'Gotham Black' }}
+            target="_blank"
             href="https://www.naacpldf.org/"
           >
             Anti-Defamation League (ADL)
@@ -113,6 +114,7 @@ export const ProductCardArray = [
             className={classes.detailA}
             style={{ fontFamily: 'Gotham Black' }}
             href="https://www.naacpldf.org/"
+            target="_blank"
           >
             Legal Defense Fund
           </a>
@@ -191,6 +193,7 @@ export const ProductCardArray = [
             className={classes.detailA}
             style={{ fontFamily: 'Gotham Black' }}
             href="https://www.thetrevorproject.org/"
+            target="_blank"
           >
             Trevor Project
           </a>
