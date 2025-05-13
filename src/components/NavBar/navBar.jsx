@@ -66,11 +66,6 @@ export function Navbar() {
               </Anchor>
             );
           })}
-          <ColorSchemeToggle
-            navColor={navColor}
-            isDark={isDark}
-            toggleColorScheme={toggleColorScheme}
-          />
           <ActionIcon
             onClick={openCart}
             title="View Cart"
@@ -79,6 +74,11 @@ export function Navbar() {
           >
             <ShoppingCart />
           </ActionIcon>
+          <ColorSchemeToggle
+            navColor={navColor}
+            isDark={isDark}
+            toggleColorScheme={toggleColorScheme}
+          />
         </div>
 
         {/* Mobile Burger */}
@@ -95,10 +95,11 @@ export function Navbar() {
       <Drawer
         opened={drawerOpened}
         onClose={close}
-        padding="sm"
-        size="80%"
+        size="60%"
         title="Menu"
-        position="right"
+        position="bottom"
+        offset={12}
+        className={classes.mobileDrawer}
       >
         <Flex direction="column" gap="md">
           {links.map((link) => (
@@ -114,6 +115,14 @@ export function Navbar() {
               {link}
             </Anchor>
           ))}
+          <ActionIcon
+            onClick={openCart}
+            title="View Cart"
+            variant="subtle"
+            style={{ color: navColor }}
+          >
+            <ShoppingCart />
+          </ActionIcon>
 
           <ColorSchemeToggle
             navColor={navColor}

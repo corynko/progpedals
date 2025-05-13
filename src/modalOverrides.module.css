@@ -1,0 +1,18 @@
+.modalContent,
+.modalHeader {
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+}
+
+.modalContent {
+  background-color: light-dark(#ffffff66, #44444488); /* darken background */
+}
+
+.modalHeader {
+  background-color: light-dark(#ffffff11, #44444400);
+}
+
+.modalTitle {
+  font-family: 'Gotham Medium';
+  color: light-dark(#444444, #a1a3bc);
+}

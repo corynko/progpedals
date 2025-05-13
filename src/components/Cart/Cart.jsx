@@ -8,14 +8,20 @@ export function Cart() {
   const total = cart.reduce((sum, item) => sum + item.totalPrice, 0);
 
   return (
-    <Container>
-      <Title mb="lg">Your Cart</Title>
+    <Container className={classes.cartContainer}>
       {cart.length === 0 ? (
         <Text>Your cart is empty.</Text>
       ) : (
         cart.map((item) => (
-          <Paper key={item.slug} p="md" mb="md" shadow="xs" withBorder>
-            <Group position="apart">
+          <Paper
+            className={classes.cartPaper}
+            key={item.slug}
+            p="md"
+            mb="md"
+            shadow="xs"
+            withBorder
+          >
+            <Group justify="space-between">
               <div>
                 <Text fw={500}>{item.title}</Text>
                 <Text size="sm">Minimum: ${item.minimumPrice}</Text>
@@ -26,7 +32,7 @@ export function Cart() {
                   </a>
                 </Text>
               </div>
-              <Button variant="light" color="red" onClick={() => removeFromCart(item.slug)}>
+              <Button className={classes.cartButton} onClick={() => removeFromCart(item.slug)}>
                 Remove
               </Button>
             </Group>
@@ -35,8 +41,8 @@ export function Cart() {
               value={item.extraDonation}
               onChange={(val) => updateDonation(item.slug, val)}
               label="Additional donation"
-              min={0}
-              step={5}
+              min={5}
+              step={10}
               prefix="$"
             />
             <Text mt="xs" fw={700}>
@@ -51,7 +57,7 @@ export function Cart() {
           <Divider my="xl" />
           <Title order={3}>Total: ${total}</Title>
           <Button mt="md" fullWidth disabled>
-            Checkout (coming soon)
+            Checkout (available June 1)
           </Button>
         </>
       )}

@@ -27,15 +27,13 @@ export function Welcome() {
     <>
       <div className={classes.content}>
         <div className={classes.progPedals}>
-          <Title className={classes.title}>
-            <Text className={classes.title} variant="gradient" component="span">
-              progressive
-            </Text>
+          <Text className={classes.title} variant="gradient" component="span">
+            progressive
+          </Text>
 
-            <Text className={classes.title2} component="span" c={'lightest'}>
-              pedals
-            </Text>
-          </Title>
+          <Text className={classes.title2} component="span" c={'lightest'}>
+            pedals
+          </Text>
         </div>
         <motion.div
           initial={{ opacity: 0 }}
