@@ -27,9 +27,12 @@ export const ProductCardArray = [
         most famous boxes of all time, with several mods to capture one of its most famous user's
         tonal palette. Four gain stages powered by USA-made silicon transistors join two,
         symmetrical, germanium diode clipping stages for plenty of gain tempered with a sweet,
-        singing high end. An added 'touch' knob allows you to dial in the perfect amount of gain
-        bleed, enabling you to ride your guitar's volume knob as much, or as little, as you'd like.
-        f.RW is available for Pay What You Want, minimum $95 -{' '}
+        singing high end. The added "(breathe)" knob interacts heavily with the tone knob to allow
+        granular control over the response of both the high and low-mids, letting you dial in
+        anything from the rolled off compression of{' '}
+        <span style={{ fontFamily: 'Gotham Light Italic' }}>Echoes</span> to the grit-forward
+        harshness of <span style={{ fontFamily: 'Gotham Light Italic' }}>Dogs</span>. f.RW is
+        available for Pay What You Want, minimum $95 -{' '}
         <span style={{ fontFamily: 'Gotham Medium' }}>
           every dollar above the minimum will be donated to the{' '}
           <a
@@ -42,8 +45,7 @@ export const ProductCardArray = [
           </a>
           , dedicated to fighting antisemitism, extremism, and hate speech in all its forms.
         </span>{' '}
-        It's a shame when one member of a band tries to destroy all of the good influence that band
-        has had - don't let him.
+        f(ck).RW - just because your bassist is a cunt, doesn't mean you have to be.
       </>
     ),
     li1: (
