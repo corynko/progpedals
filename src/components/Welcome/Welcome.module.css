@@ -5,15 +5,22 @@
   font-size: rem(100px);
   letter-spacing: rem(-2px);
 
-  @media (max-width: mantine-breakpoint-md) {
-    font-size: rem(50px);
+  @media (max-width: 900px) {
+    font-size: rem(85px);
   }
 }
 
 .progPedals {
-  position: absolute;
-  top: 9rem;
-  left: 3rem;
+  /* position: absolute; */
+  margin-top: 9rem;
+  margin-left: 3rem;
+  display: flex;
+  /* top: 9rem;
+  left: 3rem; */
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
 }
 
 .titleGrad {
@@ -31,8 +38,14 @@
   /* font-weight: 900; */
   letter-spacing: rem(-2px);
 
-  @media (max-width: mantine-breakpoint-md) {
-    font-size: rem(50px);
+  @media (max-width: 900px) {
+    font-size: rem(85px);
+  }
+}
+.title,
+.title2 {
+  @media (max-width: 750px) {
+    font-size: rem(60px);
   }
 }
 

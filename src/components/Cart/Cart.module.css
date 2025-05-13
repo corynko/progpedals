@@ -1,1 +1,45 @@
 @import '../../styles.css';
+
+.cartContainer {
+  background-color: light-dark(#ffffff55, #22222299);
+  padding: 20px;
+  margin: 20px 20px 40px 20px;
+  border-radius: 2%;
+  font-family: 'Gotham Book';
+  display: flex;
+  flex-direction: column;
+}
+
+.cartPaper {
+  background-color: light-dark(#ffffff99, #222222cc);
+}
+
+.cartButton {
+  background: light-dark(var(--mantine-color-prideRed-8), var(--mantine-color-transBlue-6));
+  color: light-dark(#ffffff, #f1f3f4);
+  font-weight: 600;
+  padding: 0.75rem;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.cartButton:hover {
+  transform: scale(1.05);
+  color: #ffffff;
+  background: light-dark(var(--mantine-color-transBlue-6), var(--mantine-color-pridePurple-8));
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transition:
+    transform 0.3s ease-out,
+    background 0.3s ease-out,
+    box-shadow 0.3s ease-out,
+    color 0.3s;
+}
+
+.cartButton:active {
+  transform: scale(0.96);
+  background: light-dark(var(--mantine-color-prideBlue-4), var(--mantine-color-pridePurple-4));
+  color: light-dark(#f1f3f4, #ffffff);
+  transition: all 0.25s ease-out;
+}

@@ -34,7 +34,7 @@ export function ProductDetail() {
   const contrastColor = useContrastColor(9, 1);
   const theme = useMantineTheme();
 
-  const [donation, setDonation] = useState(0);
+  const [donation, setDonation] = useState(5);
   const { addToCart } = useCart();
   const { openCart } = useCartModal();
 
@@ -81,7 +81,8 @@ export function ProductDetail() {
               classNames={{ input: classes.detailInput }}
               thousandSeparator=","
               className={classes.detailNumber}
-              min={0}
+              withAsterisk
+              min={5}
               step={10}
               prefix="$"
               stepHoldDelay={500}

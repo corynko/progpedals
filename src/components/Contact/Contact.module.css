@@ -16,21 +16,38 @@
   font-size: rem(100px);
   letter-spacing: rem(-2px);
 
-  @media (max-width: mantine-breakpoint-md) {
-    font-size: rem(50px);
+  @media (max-width: 900px) {
+    font-size: rem(75px);
   }
 }
 
 .title {
   color: light-dark(#000000, var(--lightest));
+
+  text-shadow: 2px 2px 2px #000000;
 }
 
 .titleSpacer {
   color: light-dark(#f4f4f4, #adadad);
+  @media (max-width: 600px) {
+    display: none;
+  }
 }
 
 .titleLocation {
   align-self: start;
+  display: flex;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
+}
+
+.title,
+.titleSpacer {
+  @media (max-width: 750px) {
+    font-size: rem(60px);
+  }
 }
 
 .paperContainer {
