@@ -1,5 +1,7 @@
 import { useState } from 'react';
+import { ShoppingCart } from 'lucide-react';
 import {
+  ActionIcon,
   Anchor,
   Burger,
   Container,
@@ -10,7 +12,9 @@ import {
   useMantineTheme,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
+import { useCartModal } from '../../contexts/cartModalContext';
 import { usePrimaryColor } from '../../theme/usePrimaryColor';
+import { Cart } from '../Cart/Cart';
 import { ColorSchemeToggle } from '../ColorSchemeToggle/ColorSchemeToggle';
 import LogoDraw from './logoDraw';
 import classes from './NavBar.module.css';
@@ -21,6 +25,8 @@ export function Navbar() {
   const isDark = colorScheme === 'dark';
   const [drawerOpened, { open, close }] = useDisclosure(false);
   const links = ['about', 'products', 'contact'];
+
+  const { openCart } = useCartModal();
 
   const navColor = usePrimaryColor(8, 1);
 
@@ -65,6 +71,14 @@ export function Navbar() {
             isDark={isDark}
             toggleColorScheme={toggleColorScheme}
           />
+          <ActionIcon
+            onClick={openCart}
+            title="View Cart"
+            variant="subtle"
+            style={{ color: navColor }}
+          >
+            <ShoppingCart />
+          </ActionIcon>
         </div>
 
         {/* Mobile Burger */}
