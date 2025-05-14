@@ -55,7 +55,7 @@ export default function ContactForm() {
     if (!turnstilePassed) {
       Swal.fire({
         icon: 'warning',
-        title: 'Hold up',
+        title: 'Hold Up',
         text: 'Please verify you are human before submitting.',
       });
       return;
