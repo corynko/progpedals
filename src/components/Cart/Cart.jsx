@@ -167,6 +167,10 @@ export function Cart() {
                 onClick={handleSendReminder}
                 className={classes.cartButton}
                 disabled={emailSent || !isValidEmail(email)}
+                style={{
+                  pointerEvents: emailSent || !isValidEmail(email) ? 'none' : 'auto',
+                  opacity: emailSent || !isValidEmail(email) ? 0.6 : 1,
+                }}
               >
                 {emailSent ? 'Reminder Sent!' : 'Send Reminder'}
               </Button>
