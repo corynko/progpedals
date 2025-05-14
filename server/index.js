@@ -58,7 +58,8 @@ app.use(
   session({
     secret: process.env.SESSION_SECRET,
     resave: false,
-    saveUninitialized: false,
+    //TODO: change saveUnitialized to false for production
+    saveUninitialized: true,
     store: MongoStore.create({ mongoUrl: process.env.MONGO_URI }),
     cookie: {
       domain: '.progpedals.com',
@@ -83,10 +84,14 @@ app.get('/debug-cookie', (req, res) => {
 // Routes
 
 // Get cart from session
-app.get('/api/cart', cors({ origin: allowedOrigins, credentials: true }), (req, res) => {
+app.get('/api/cart', (req, res) => {
   if (!req.session.cart) {
     req.session.cart = [];
+  } else {
+    // Mark session as modified to force cookie write
+    req.session.touch();
   }
+
   res.json({ cart: req.session.cart });
 });
 
