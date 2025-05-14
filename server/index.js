@@ -37,6 +37,8 @@ mongoose.connect(process.env.MONGO_URI, {
   useUnifiedTopology: true,
 });
 
+app.set('trust proxy', 1);
+
 // Sessions
 // TODO: uncomment for local production, comment out other session
 // app.use(
@@ -62,7 +64,6 @@ app.use(
     saveUninitialized: true,
     store: MongoStore.create({ mongoUrl: process.env.MONGO_URI }),
     cookie: {
-      // domain: '.progpedals.com',
       httpOnly: true,
       sameSite: 'none',
       secure: true,
@@ -73,7 +74,6 @@ app.use(
 
 app.get('/debug-cookie', (req, res) => {
   res.cookie('testCookie', '123abc', {
-    // domain: '.progpedals.com',
     sameSite: 'none',
     secure: true,
     httpOnly: true,
