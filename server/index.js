@@ -17,14 +17,6 @@ app.use(
   })
 );
 
-app.options(
-  '/api/cart',
-  cors({
-    origin: allowedOrigins,
-    credentials: true,
-  })
-);
-
 app.use(express.json());
 
 // MongoDB connection
@@ -68,15 +60,14 @@ app.use(
 // Routes
 
 // Get cart from session
-app.get('/api/cart', (req, res) => {
+app.get('/api/cart', cors({ origin: allowedOrigins, credentials: true }), (req, res) => {
   if (!req.session.cart) {
     req.session.cart = [];
   }
   res.json({ cart: req.session.cart });
 });
 
-// Update cart in session
-app.post('/api/cart', (req, res) => {
+app.post('/api/cart', cors({ origin: allowedOrigins, credentials: true }), (req, res) => {
   const { cart } = req.body;
   if (!Array.isArray(cart)) {
     return res.status(400).json({ error: 'Cart must be an array' });
