@@ -8,7 +8,7 @@ const cors = require('cors');
 const app = express();
 
 // Middleware
-const allowedOrigins = ['http://localhost:5173', 'https://www.progpedals.com'];
+const allowedOrigins = ['http://localhost:5173', 'https://progpedals.com'];
 
 const corsOptions = {
   origin: function (origin, callback) {
