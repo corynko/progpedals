@@ -1,9 +1,12 @@
 import React from 'react';
 import { HelmetProvider } from '@dr.pogodin/react-helmet';
 import ReactDOM from 'react-dom/client';
+// @ts-ignore
 import App from './App';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+const rootElement = document.getElementById('root');
+if (!rootElement) throw new Error('Root element not found');
+ReactDOM.createRoot(rootElement).render(
   <React.StrictMode>
     <HelmetProvider>
       <App />
