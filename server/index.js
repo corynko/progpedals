@@ -18,7 +18,7 @@ app.use(
 );
 
 app.options(
-  '/*',
+  '/api/cart',
   cors({
     origin: allowedOrigins,
     credentials: true,
