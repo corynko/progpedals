@@ -61,7 +61,7 @@ app.use(
     saveUninitialized: false,
     store: MongoStore.create({ mongoUrl: process.env.MONGO_URI }),
     cookie: {
-      domain: 'progpedals.com',
+      domain: '.progpedals.com',
       httpOnly: true,
       sameSite: 'none',
       secure: true,
@@ -69,6 +69,16 @@ app.use(
     },
   })
 );
+
+app.get('/debug-cookie', (req, res) => {
+  res.cookie('testCookie', '123abc', {
+    domain: '.progpedals.com',
+    sameSite: 'none',
+    secure: true,
+    httpOnly: true,
+  });
+  res.send('Set testCookie');
+});
 
 // Routes
 
