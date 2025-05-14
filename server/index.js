@@ -17,6 +17,14 @@ app.use(
   })
 );
 
+app.options(
+  '*',
+  cors({
+    origin: allowedOrigins,
+    credentials: true,
+  })
+);
+
 app.use(express.json());
 
 // MongoDB connection

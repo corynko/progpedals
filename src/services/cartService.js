@@ -2,7 +2,7 @@
 
 // TODO: uncomment the following for local dev
 // const API_URL = 'http://localhost:4000/api/cart';
-const API_URL = 'https://progpedals.onrender.com';
+const API_URL = 'https://progpedals.onrender.com/api/cart';
 
 export async function getCart() {
   try {
