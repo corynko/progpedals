@@ -25,7 +25,8 @@
   color: var(--prideYellow);
 }
 
-.mobileBurger {
+.mobileBurger,
+.mobileCart {
   display: none;
 }
 
@@ -58,7 +59,8 @@
     display: none;
   }
 
-  .mobileBurger {
+  .mobileBurger,
+  .mobileCart {
     display: block;
   }
 }
