@@ -7,6 +7,7 @@ const API_URL = 'https://progpedals.onrender.com/api/cart';
 export async function getCart() {
   try {
     const res = await fetch(API_URL, {
+      method: 'GET',
       credentials: 'include',
     });
     const data = await res.json();

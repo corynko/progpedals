@@ -10,12 +10,20 @@ const app = express();
 // Middleware
 const allowedOrigins = ['http://localhost:5173', 'https://www.progpedals.com'];
 
-app.use(
-  cors({
-    origin: allowedOrigins,
-    credentials: true,
-  })
-);
+const corsOptions = {
+  origin: function (origin, callback) {
+    console.log('Incoming origin:', origin);
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Blocked by CORS'));
+    }
+  },
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
+app.options('*', cors(corsOptions));
 
 app.use(express.json());
 
