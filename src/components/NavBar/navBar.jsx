@@ -1,15 +1,21 @@
 import { useState } from 'react';
+import { ShoppingCart } from 'lucide-react';
 import {
+  ActionIcon,
   Anchor,
+  Box,
   Burger,
   Container,
   Drawer,
   Flex,
+  Text,
   Title,
   useMantineColorScheme,
   useMantineTheme,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
+import { useCart } from '../../contexts/cartContext';
+import { useCartModal } from '../../contexts/cartModalContext';
 import { usePrimaryColor } from '../../theme/usePrimaryColor';
 import { ColorSchemeToggle } from '../ColorSchemeToggle/ColorSchemeToggle';
 import LogoDraw from './logoDraw';
@@ -22,7 +28,12 @@ export function Navbar() {
   const [drawerOpened, { open, close }] = useDisclosure(false);
   const links = ['about', 'products', 'contact'];
 
+  const { openCart } = useCartModal();
+
   const navColor = usePrimaryColor(8, 1);
+
+  const { cart } = useCart();
+  const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
     <Container fluid className={classes.navbarContainer}>
@@ -60,6 +71,38 @@ export function Navbar() {
               </Anchor>
             );
           })}
+          <Box style={{ position: 'relative' }}>
+            <ActionIcon
+              onClick={openCart}
+              title="View Cart"
+              variant="subtle"
+              style={{ color: navColor }}
+            >
+              <ShoppingCart />
+            </ActionIcon>
+            {totalItems > 0 && (
+              <Text
+                size="xs"
+                fw={700}
+                style={{
+                  position: 'absolute',
+                  top: -5,
+                  right: -5,
+                  backgroundColor: theme.colors.red[7],
+                  color: 'white',
+                  borderRadius: '50%',
+                  padding: '2px 6px',
+                  fontSize: '0.7rem',
+                  lineHeight: 1,
+                  minWidth: 18,
+                  textAlign: 'center',
+                }}
+              >
+                {totalItems}
+              </Text>
+            )}
+          </Box>
+
           <ColorSchemeToggle
             navColor={navColor}
             isDark={isDark}
@@ -68,6 +111,37 @@ export function Navbar() {
         </div>
 
         {/* Mobile Burger */}
+        <Box className={classes.mobileCart} style={{ position: 'relative' }}>
+          <ActionIcon
+            onClick={openCart}
+            title="View Cart"
+            variant="subtle"
+            style={{ color: navColor }}
+          >
+            <ShoppingCart />
+          </ActionIcon>
+          {totalItems > 0 && (
+            <Text
+              size="xs"
+              fw={700}
+              style={{
+                position: 'absolute',
+                top: -5,
+                right: -5,
+                backgroundColor: theme.colors.red[7],
+                color: 'white',
+                borderRadius: '50%',
+                padding: '2px 6px',
+                fontSize: '0.7rem',
+                lineHeight: 1,
+                minWidth: 18,
+                textAlign: 'center',
+              }}
+            >
+              {totalItems}
+            </Text>
+          )}
+        </Box>
         <Burger
           className={classes.mobileBurger}
           opened={drawerOpened}
@@ -81,10 +155,11 @@ export function Navbar() {
       <Drawer
         opened={drawerOpened}
         onClose={close}
-        padding="sm"
-        size="80%"
+        size="60%"
         title="Menu"
-        position="right"
+        position="bottom"
+        offset={12}
+        className={classes.mobileDrawer}
       >
         <Flex direction="column" gap="md">
           {links.map((link) => (

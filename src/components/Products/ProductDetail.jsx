@@ -1,10 +1,12 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { useParams } from 'react-router-dom';
 import {
+  Button,
   Container,
   Image,
   List,
+  NumberInput,
   Paper,
   Text,
   ThemeIcon,
@@ -15,6 +17,9 @@ import {
 import lightBg from '../../assets/png/EKP_LW_1.jpg';
 import darkBg from '../../assets/png/EKP_S-C-12.jpg';
 import { useBackground } from '../../contexts/backgroundContext';
+import { useCart } from '../../contexts/cartContext';
+import { useCartModal } from '../../contexts/cartModalContext';
+import { useContrastColor } from '../../theme/useContrastColor';
 import { usePrimaryColor } from '../../theme/usePrimaryColor';
 import { ProductCardArray } from './ProductCardArray';
 import classes from './ProductDetail.module.css';
@@ -26,7 +31,12 @@ export function ProductDetail() {
   const isDark = colorScheme === 'dark';
   const { setBackgrounds } = useBackground();
   const navColor = usePrimaryColor(9, 3);
+  const contrastColor = useContrastColor(9, 1);
   const theme = useMantineTheme();
+
+  const [donation, setDonation] = useState(5);
+  const { addToCart } = useCart();
+  const { openCart } = useCartModal();
 
   useEffect(() => {
     setBackgrounds({
@@ -51,6 +61,34 @@ export function ProductDetail() {
           <Title c={navColor} className={classes.detailTitle}>
             {product.title}
           </Title>
+          <Paper className={classes.detailPaper}>
+            <Button
+              className={classes.detailButton}
+              onClick={() => {
+                addToCart(product, donation);
+                openCart();
+              }}
+              fullWidth
+              mt="md"
+            >
+              Add to cart — ${product.minimumPrice + donation}
+            </Button>
+
+            <NumberInput
+              value={donation}
+              onChange={setDonation}
+              label="Additional Donation"
+              classNames={{ input: classes.detailInput }}
+              thousandSeparator=","
+              className={classes.detailNumber}
+              withAsterisk
+              min={5}
+              step={10}
+              prefix="$"
+              stepHoldDelay={500}
+              stepHoldInterval={(t) => Math.max(1000 / t ** 2, 25)}
+            />
+          </Paper>
         </div>
         <div>
           <Paper className={classes.detailPaper}>
@@ -122,6 +160,20 @@ export function ProductDetail() {
                 }}
               >
                 {product.li4}
+              </List.Item>
+              <List.Item
+                icon={
+                  <ThemeIcon color={theme.colors.prideOrange[6]} size={24} radius="xl">
+                    <ArrowRight size={16} />
+                  </ThemeIcon>
+                }
+                classNames={{
+                  itemWrapper: classes.itemWrapper,
+                  itemIcon: classes.itemIcon,
+                  itemLabel: classes.itemLabel,
+                }}
+              >
+                {product.li5}
               </List.Item>
             </List>
           </Paper>
