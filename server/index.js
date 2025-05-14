@@ -57,10 +57,11 @@ app.use(
     saveUninitialized: false,
     store: MongoStore.create({ mongoUrl: process.env.MONGO_URI }),
     cookie: {
-      maxAge: 1000 * 60 * 60 * 24 * 7,
+      domain: 'progpedals.com',
       httpOnly: true,
-      sameSite: isProd ? 'none' : 'lax',
-      secure: isProd,
+      sameSite: 'none',
+      secure: true,
+      maxAge: 1000 * 60 * 60 * 24 * 7,
     },
   })
 );
