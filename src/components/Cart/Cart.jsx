@@ -167,7 +167,8 @@ export function Cart() {
         <>
           <Divider my="xl" />
           <Title order={3}>Total: ${total}</Title>
-          <Button mt="md" fullWidth onClick={handleCheckout}>
+          {/* <Button mt="md" fullWidth onClick={handleCheckout}> */}
+          <Button mt="md" fullWidth disabled>
             Checkout (coming July 1st)
           </Button>
           {!showEmailInput ? (
