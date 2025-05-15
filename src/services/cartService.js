@@ -1,8 +1,8 @@
 // src/services/cartService.js
 
 // TODO: uncomment the following for local dev
-// const API_URL = 'http://localhost:4000/api/cart';
-const API_URL = 'https://api.progpedals.com/api/cart';
+const API_URL = 'http://localhost:4000/api/cart';
+// const API_URL = 'https://api.progpedals.com/api/cart';
 
 export async function getCart() {
   try {
