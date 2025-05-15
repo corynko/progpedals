@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { send } from '@emailjs/browser';
+import { loadStripe } from '@stripe/stripe-js';
 import Swal from 'sweetalert2';
 import {
   Button,
@@ -15,6 +16,8 @@ import {
 import { useCart } from '../../contexts/cartContext';
 import { useCartModal } from '../../contexts/cartModalContext';
 import classes from './Cart.module.css';
+
+const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY);
 
 export function Cart() {
   //react and context imports
@@ -75,6 +78,29 @@ export function Cart() {
         text: 'Something went wrong. Please try again later.',
       });
       setEmailSent(false);
+    }
+  };
+
+  const handleCheckout = async () => {
+    const stripe = await stripePromise;
+
+    try {
+      const res = await fetch('http://localhost:4000/api/create-checkout-session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({ cart }),
+      });
+
+      const data = await res.json();
+
+      if (data.url) {
+        window.location.href = data.url;
+      } else {
+        console.error('No URL returned from backend');
+      }
+    } catch (err) {
+      console.error('Checkout error:', err);
     }
   };
 
@@ -141,7 +167,7 @@ export function Cart() {
         <>
           <Divider my="xl" />
           <Title order={3}>Total: ${total}</Title>
-          <Button mt="md" fullWidth disabled>
+          <Button mt="md" fullWidth onClick={handleCheckout}>
             Checkout (coming July 1st)
           </Button>
           {!showEmailInput ? (

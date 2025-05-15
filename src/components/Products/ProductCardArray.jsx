@@ -8,7 +8,7 @@ import classes from './ProductDetail.module.css';
 
 export const ProductCardArray = [
   {
-    slug: 'fRW',
+    slug: 'f.RW',
     title: `f.RW`,
     description: (
       <>
