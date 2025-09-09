@@ -60,6 +60,7 @@ export function Welcome() {
         </motion.div>
         <div className={classes.slogan}>
           <Title c={navColor}>progressive tools for progressive players</Title>
+          <Title c={navColor}>and a case study in radical marketing</Title>
         </div>
       </div>
     </>
