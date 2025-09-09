@@ -65,14 +65,14 @@ export function Products() {
         </Title>
       </motion.div>
       <Container className={classes.paperContainer}>
-        {/* <Paper className={classes.comingSoon}>
+        <Paper className={classes.comingSoon}>
           <Text c={navColor} className={classes.comingSoonH1}>
             first drop coming soon
           </Text>
           <Text c={navColor} className={classes.comingSoonH3}>
             stay tuned
           </Text>
-        </Paper> */}
+        </Paper>
         {ProductCardArray.map((product) => (
           <motion.div
             key={product.slug}
