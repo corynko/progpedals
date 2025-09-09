@@ -22,11 +22,11 @@ export const AboutCardArray = [
     title: "if it's pay-what-you-want, why is there a minimum donation?",
     text: `Donations are kind of the point of this enterprise, to be frank. If you want to use our pedals, we expect you to also want to support progressive causes. These pedals are offered for *significantly* less than other boutique, hand-built guitar pedals, so we don't think an additional donation to one of our causes is too much to ask. If an additional donation truly places our products outside of your budget, get in touch with us, and we can work something out.`,
   },
-  {
-    title: 'are you a trump supporter who still wants a progressive pedal?',
-    text: `Too bad. You made your choice, and so did we. Actions have consequences, and
-      seemingly the only consequence of you voting to destroy the fabric of this nation is
-      that our pedals are not for you. Don\'t like it? Feel free to give us your money so
-      that you can destroy our merchandise on tiktok or whatever it is you do.`,
-  },
+  // {
+  //   title: 'are you a trump supporter who still wants a progressive pedal?',
+  //   text: `Too bad. You made your choice, and so did we. Actions have consequences, and
+  //     seemingly the only consequence of you voting to destroy the fabric of this nation is
+  //     that our pedals are not for you. Don\'t like it? Feel free to give us your money so
+  //     that you can destroy our merchandise on tiktok or whatever it is you do.`,
+  // },
 ];
